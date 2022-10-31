@@ -1,120 +1,182 @@
-/* This file is for your main application CSS */
-@import "./phoenix.css";
+/* This file is for your main application css. */
 
-/* Alerts and form errors used by phx.new */
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-.alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-.alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-}
-.alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
-.alert p {
-  margin-bottom: 0;
-}
-.alert:empty {
-  display: none;
-}
-.invalid-feedback {
-  color: #a94442;
-  display: block;
-  margin: -1rem 0 2rem;
+/*
+ * Basic styling for elixircasts.io screencasts
+ */
+
+ body {
+  font-family: 'Open Sans', sans-serif;
+  background: #183d44;
+  font-size: 14px;
+  line-height: 22px;
+  overflow-x: hidden;
 }
 
-/* LiveView specific classes for your customization */
-.phx-no-feedback.invalid-feedback,
-.phx-no-feedback .invalid-feedback {
-  display: none;
+::selection{
+  background-color: #FFEC6E;
+  color: #000;
 }
 
-.phx-click-loading {
-  opacity: 0.5;
-  transition: opacity 1s ease-out;
+::-moz-selection {
+  background: #46c2ca;
+  color: #000;
 }
 
-.phx-loading{
-  cursor: wait;
+.container {
+	width: 50%;
+	height: 100%;
+	background-color: rgb(226, 255, 248);
+	margin: 60px auto;
+  border-radius: 20px;
+  padding-bottom: 20px;
 }
 
-.phx-modal {
-  opacity: 1!important;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.phx-modal-content {
-  background-color: #fefefe;
-  margin: 15vh auto;
+#header{
+  background: rgb(42, 194, 136);
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  border-radius: 20px 20px 0 0 ;
 }
 
-.phx-modal-close {
-  color: #aaa;
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #CCC;
+}
+
+a {
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+}
+
+.alert:empty {
+  display:none;
+}
+
+p.alert.alert-info {
+  padding: 7px;
+  background: #DFF0D8;
+}
+
+p.alert.alert-danger {
+  padding: 7px;
+  background: #F2DEDE;
+}
+
+.flash-notice {
+  padding: 7px;
+  background: #D9EDF7;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#chat-box {
+  padding: 10px 0 0 30px;
+  min-height: 270px;
+  max-height: 325px;
+  overflow: scroll;
+}
+
+#chat-form {
+  padding-inline: 40px;
+  width:100%;
+}
+
+#button-submit{
+  color: rgb(242, 255, 249);
+  padding: 10px 30px 10px 30px;
+  background-color: #00b158;
+  border: none;
+  border-radius: 7px;
+  margin-top: 40px;
+}
+
+
+#user-name {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(109, 233, 171);
+  color: #0c7740;
+}
+
+#user-name::placeholder{
+  color: #0c7740;
+}
+
+#user-msg {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  border: none;
+  background-color: #a2ffd1;
+  color: #06703b;
+}
+
+#user-msg::placeholder{
+  color: #06703b;
+}
+
+.nav-header {
+  position: relative;
+  width: 100%;
+}
+
+.nav-h1 {
+  float: left;
+  clear:none;
+}
+
+.nav-header .nav-link {
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  margin: -40px 10px 10px 10px;
 }
 
-.phx-modal-close:hover,
-.phx-modal-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.nav-header .nav-link a {
+  margin-left: 5px;
 }
 
-.fade-in-scale {
-  animation: 0.2s ease-in 0s normal forwards 1 fade-in-scale-keys;
+.elixircasts-form {
+  margin-bottom: 10px;
 }
 
-.fade-out-scale {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-scale-keys;
+.elixircasts-form label {
+    display: block;
+    margin: 0px 0px 5px;
 }
 
-.fade-in {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-in-keys;
-}
-.fade-out {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-keys;
-}
-
-@keyframes fade-in-scale-keys{
-  0% { scale: 0.95; opacity: 0; }
-  100% { scale: 1.0; opacity: 1; }
-}
-
-@keyframes fade-out-scale-keys{
-  0% { scale: 1.0; opacity: 1; }
-  100% { scale: 0.95; opacity: 0; }
+.elixircasts-form input[type="text"], .elixircasts-form input[type="email"], .elixircasts-form textarea, .elixircasts-form select{
+    border: 1px solid #000;
+    color: #000;
+    font-size: 14px;
+    height: 20px;
+    line-height:15px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 5px 0px 5px 5px;
+    width: 70%;
 }
 
-@keyframes fade-in-keys{
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.elixircasts-form .help-block {
+  background: #F2DEDE;
 }
 
-@keyframes fade-out-keys{
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+.elixircasts-form select {
+    height: 35px;
+}
+.elixircasts-form textarea{
+    height:100px;
+    padding: 5px 0px 0px 5px;
 }

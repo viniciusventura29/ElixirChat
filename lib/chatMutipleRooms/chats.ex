@@ -8,6 +8,14 @@ defmodule ChatMutipleRooms.Chats do
 
   alias ChatMutipleRooms.Chats.Message
 
+  def list_messages_by_room(room) do
+    qry = from m in Message,
+      where: m.room == ^room,
+      order_by: [asc: m.inserted_at]
+
+    Repo.all(qry)
+  end
+
   @doc """
   Returns the list of messages.
 

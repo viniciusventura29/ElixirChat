@@ -9,5 +9,7 @@ defmodule ChatMutipleRooms.Repo.Migrations.CreateMessages do
 
       timestamps()
     end
+
+    create index(:messages, [:room])
   end
 end
