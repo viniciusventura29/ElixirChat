@@ -1,5 +1,8 @@
 # ChatMutipleRooms
 
+## What it is?
+This a project developed to learn Elixir and it framework Phoenix. This is a Web Chat that you can have multiple rooms, in accordance with the URL that you are connected
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
